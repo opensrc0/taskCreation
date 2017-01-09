@@ -1,0 +1,35 @@
+
+<div class="task" id="task">
+	<div ng-repeat="data in teamMebers" style="float:left;width: 25%;" data-idName="taskRow{{$index}}" id="taskRow{{$index}}">
+		<div id="taskListExtra{{$index}}{{$parent.$index}}" 
+			ng-click="createTaskModal($index)" class="createTask" 
+			ondrop="angular.element(document.getElementById('task')).scope().drop(event)" 
+			ondragover="angular.element(document.getElementById('task')).scope().allowDrop(event)"
+			>&#8853;<br>Create Task
+		</div>
+
+		<div class="taskHeading" id="taskListEmpName{{$index}}{{$parent.$index}}"  
+			ondrop="angular.element(document.getElementById('task')).scope().drop(event)" 
+			ondragover="angular.element(document.getElementById('task')).scope().allowDrop(event)">{{data.empName}}
+		</div>
+
+		<div class="taskListing" ng-repeat="taskdata in data.task"
+			draggable="{{json.isChangeTask}}"
+			id="taskList{{$index}}{{$parent.$index}}"
+			ondragstart="angular.element(document.getElementById('task')).scope().drag(event)"
+			ondrop="angular.element(document.getElementById('task')).scope().drop(event)" ondragover="angular.element(document.getElementById('task')).scope().allowDrop(event)"
+		 	ng-style="{'border-left' : taskdata.status == 'On Hold' ? '4px solid #FFD700' : '4px solid #2fc4a8', 'cursor' : json.isChangeTask ? 'move' : 'auto'}">
+			
+			<div style="display: inline-block;" ><b >{{taskdata.taskName}}</b></div>
+			<div style="display: inline-block;" ng-click="alerting()">
+				<button class="statusButton danger" ng-class="{'statusDone' : taskdata.status == 'Done', 'statusOnHold' : taskdata.status == 'On Hold'}" >{{taskdata.status}}<div class="arrow-down" style="display: inline-block;"></div></button>
+			</div>
+			<div>{{taskdata.comment}}</div>
+		</div>
+		
+	</div>
+	<div style="float:left;" ng-click="json.isChangeTask = !json.isChangeTask">
+		<div class="taskChange" ng-class="{'themeColor' : json.isChangeTask}" >Add task to New Member</div>
+	</div>
+	<div class="clear:both"></div>
+</div>

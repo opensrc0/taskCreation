@@ -1,0 +1,14 @@
+<div class="project">
+	<div class="listing" ng-repeat="data in listingData" ng-clock ui-sref="task({foo:'task', bar : data.heading})">
+		<div class="listingHeight">
+			<div class="lheading">{{data.heading}}</div>
+			<div class="ldescription">{{data.description}}</div>
+			<div class="lmember">Total Members: <label class="memNub">{{data.noOfMember}}</label></div>
+		</div>
+	</div>
+	<div class="createListing" ng-click="createProjectModal()" ng-class="{'themeColor' : json.isModel}">
+		<div class="listingHeight">
+			<div style="text-align: center;margin-top: 25px;">&#8853;<br>Create New Project</div>
+		</div>
+	</div>
+</div>

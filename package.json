@@ -1,0 +1,15 @@
+{
+  "name": "spklr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crmApp.js",
+  "dependencies": {
+    "angular-ui-bootstrap": "^2.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

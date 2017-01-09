@@ -1,0 +1,31 @@
+	<div class="createProject row form-group">
+		<div class="createProjectHeading">
+			<div style="display: inline-block;font-weight: bold;">Created Task</div>
+			<div class="cross" ng-click="$dismiss();json.isModel = false;">×</div>
+			<div class="clear:both"></div>
+		</div>
+		<hr>
+		<form>
+			<div class="createProjectbody">
+				<div style="margin-top: 15px;">
+					<div style="margin-bottom: 2px;">Task</div>
+					<input type="text" name="title" ng-model="json.task" placeholder="Task Title..." class="form-control">
+				</div>
+				<div style="margin-top: 15px;">
+					<div style="margin-bottom: 2px;">Description</div>
+					<textarea placeholder="Start Typing..." ng-model="json.description" name="description" class="form-control"></textarea>
+				</div>
+				<div style="margin-top: 15px;">
+					<div style="margin-bottom: 2px;">Status</div>
+					<select name="member" class="form-control" ng-model="json.status">
+						<option disabled="" selected="true">Select</option>
+						<option ng-repeat="member in memberList">{{member}}</option>
+					</select>
+				</div>
+			</div>
+		</form>
+		<div>
+			<button type="button" class="createButton" ng-click="createTask()">Create Project</button>
+			<button type="button" class="cancelButton" ng-click="$dismiss();json.isModel = false;">Cancel</button>
+		</div>
+	</div>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel=StyleSheet href="css/common.css"></link>
+		<link type="text/css" rel=StyleSheet href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.css"></link>
+		<script src="http://code.angularjs.org/snapshot/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+	</head>
+
+
+	<body ng-app="crmApp">
+		<header>
+			<div>
+				Task Management
+			</div>
+		</header>
+		<section>
+			<div ui-view></div>
+		</section>
+		<footer>
+			
+		</footer>
+		<script src="js/crmApp.js"></script>
+		<script src="js/projectCtrl.js"></script>
+		<script src="js/taskCtrl.js"></script>
+	</body>
+</html>
