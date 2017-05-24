@@ -1,4 +1,7 @@
-var app = angular.module("crmApp", ['ui.bootstrap','ui.router']);
+require('./projectCtrl.js');
+require('./taskCtrl.js');
+
+const app = angular.module("crmApp", ['ui.bootstrap','ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     
@@ -16,3 +19,5 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'taskCtrl'    
         });
 });
+
+

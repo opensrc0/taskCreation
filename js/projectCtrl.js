@@ -1,4 +1,4 @@
-app.controller("projectCtrl", function($scope,$modal,$state) {
+module.exports = angular.module("projectCtrl", function($scope,$modal,$state,$rootScope) {
 
 	$scope.json = {};
 	var modalInstance;
@@ -66,12 +66,14 @@ app.controller("projectCtrl", function($scope,$modal,$state) {
 	$scope.createProjectModal = function () {
 		$scope.json.isModel = true;
 		$scope.memberList = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25];
+		$rootScope.memberList = 'him';
 		modalInstance = $modal.open({
 			templateUrl: 'partials/createProject.html',
 			windowClass:'createProject-modal',
 			scope: $scope,
 			size: 'lg'
 		});
+
 	}
 
 	$scope.createProject = function () {
@@ -84,6 +86,6 @@ app.controller("projectCtrl", function($scope,$modal,$state) {
 		modalInstance.dismiss();
 		$scope.json.isModel = false;
 	}
-
+	
 
 });
